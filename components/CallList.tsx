@@ -13,7 +13,6 @@ import Loader from "./Loader";
 interface CallListProps {}
 
 const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
-  const router = useRouter();
   const { endedCalls, upcomingCalls, callRecordings, isLoading } =
     useGetCalls();
   const [recordings, setRecordings] = useState<CallRecording[]>([]);
@@ -76,7 +75,7 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
         calls.map((meeting: Call | CallRecording, index) => {
           return (
             <MeetingWrapper
-              key={(meeting as Call).id}
+              key={index + "meeting"}
               meeting={meeting}
               type={type}
             />
@@ -90,6 +89,8 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
 };
 
 const MeetingWrapper = ({ meeting, type }: { neeting: Call; type: string }) => {
+  const router = useRouter();
+
   const meetingIcon =
     type === "ended"
       ? "/icons/previous.svg"
