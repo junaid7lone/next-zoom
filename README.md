@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Xoom - Zoom Clone with Next.js
+
+Xoom is a Zoom clone application built using Next.js. It uses clerk.com for user authentication and user management and GetStream.io for video calling functionality. This project aims to provide a scalable, secure, and intuitive video conferencing solution.
+
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- User authentication and management with Clerk.com
+- Video calling with GetStream.io
+- Real-time messaging and chat functionality
+- Screen sharing and recording
+- Multiple participants in video calls
+- Responsive and user-friendly UI
+
+## Tech Stack
+
+- **Frontend**: Next.js, React
+- **Authentication**: Clerk.com
+- **Video Calling**: GetStream.io
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js (>= 14.x)
+- npm or yarn
+- GetStream.io account
+- Clerk.com account
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to set up and run the project on your local machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Clone the Repository
+
+`git clone https://github.com/junaid7lone/next-zoom.git`
+
+`cd xoom`
+
+### Installation
+
+Install the dependencies using npm or yarn.
+
+`npm install`
+
+_or_
+
+`yarn install`
+
+### Configuration
+
+1. **Clerk Setup**:
+
+   - Sign up for [Clerk.com](https://clerk.com) and create a new application.
+   - Obtain your Clerk API keys and add them to a `.env.local` file:
+
+     `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<Your Clerk Frontend API>`
+
+     `CLERK_SECRET_KEY=<Your Clerk API Key>`
+
+2. **GetStream Setup**:
+
+   - Sign up for [GetStream.io](https://getstream.io) and create a new application.
+   - Obtain your Stream API keys and add them to your `.env.local` file:
+
+     `NEXT_PUBLIC_STREAM_API_KEY=<Your Stream API Key>`
+
+     `STREAM_SECRET_KEY=<Your Stream API Secret>`
+
+3. **Environment Variables**:
+
+   - Add any other required environment variables to `.env.local`:
+
+     `NEXT_PUBLIC_BASE_URL=<Your Site URL>`
+
+### Running the Application
+
+Start the development server:
+
+`npm run dev`
+
+_or_
+
+`yarn dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Sign Up / Sign In**:
 
-## Learn More
+   - Use Clerk’s authentication interface to sign up or sign in to your account.
 
-To learn more about Next.js, take a look at the following resources:
+   `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   `NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. **Create / Join Meeting**:
 
-## Deploy on Vercel
+   - Once authenticated, you can create a new meeting or join an existing one using the meeting ID.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Video and Chat**:
+   - During the meeting, you can use video calling and real-time chat features powered by GetStream.io.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new feature branch: `git checkout -b feature/your-feature-name`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/your-feature-name`.
+5. Submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+- **Author**: Your Name
+- **Email**: your-email@example.com
+- **GitHub**: [junaid7lone](https://github.com/junaid7lone)
+- **Project Repository**: [Xoom on GitHub](https://github.com/junaid7lone/next-zoom)
